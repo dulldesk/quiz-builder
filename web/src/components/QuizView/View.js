@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useLoaderData } from "react-router-dom";
-import {INPUT_DELIM_SUFFIX} from "../helpers/utils";
+import {INPUT_DELIM_SUFFIX} from "../../helpers/utils";
 import "./View.scss";
 
 import BlankInput from "../BlankInput/BlankInput";

@@ -1,10 +1,10 @@
 // import React from 'react';
 // import React, { useEffect, useState } from 'react';
-import {dragover_handler, drop_handler} from "../helpers/dragndrop";
+import {dragover_handler, drop_handler} from "../../helpers/dragndrop";
 import BlankBuilder from "../BlankInput/Builder";
 
-import {INPUT_DELIM_SUFFIX} from "../helpers/utils";
-import {stringifyContent} from "../helpers/content-format";
+import {INPUT_DELIM_SUFFIX} from "../../helpers/utils";
+import {stringifyContent} from "../../helpers/content-format";
 
 
 export default function ContentInput(props) {

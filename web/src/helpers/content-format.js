@@ -1,5 +1,5 @@
-import {LINE_DELIM, INPUT_DELIM_SUFFIX} from "../helpers/utils";
-import {API_SERVER} from "../../config";
+import {LINE_DELIM, INPUT_DELIM_SUFFIX} from "./utils";
+import {API_SERVER} from "../config";
 export function parseContent(s) {
 	return s.split(LINE_DELIM);
 }

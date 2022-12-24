@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import "./BlankInput.scss";
 
-import {dragstart_handler} from "../helpers/dragndrop";
 import OptionsBuilder from "./OptionsBuilder";
 import BlankInput from "./BlankInput";
 
 import gear_icon from "./svg/settings.svg";
 import move_icon from "./svg/move.svg";
-
-import {dirtyclone} from "../helpers/utils";
+import {dirtyclone} from "../../helpers/utils";
+import {dragstart_handler} from "../../helpers/dragndrop";
 
 
 export default function BlankBuilder(props) {

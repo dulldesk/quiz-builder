@@ -6,8 +6,8 @@ import ContentInput from "./Content";
 import BlankManager from "./BlankManager";
 import BasicQuizInfo from "./BasicInfoInput";
 
-import {INPUT_DELIM_SUFFIX, dirtyclone, genRandomId} from "../helpers/utils";
-import {mergeStrayTextFields, insertInputIntoContent, postQuiz} from "../helpers/content-format";
+import {INPUT_DELIM_SUFFIX, dirtyclone, genRandomId} from "../../helpers/utils";
+import {mergeStrayTextFields, insertInputIntoContent, postQuiz} from "../../helpers/content-format";
 import {encode as b64encode} from 'base-64';
 
 

@@ -1,6 +1,6 @@
 import QuizForm from "./components/QuizForm/Form";
 import QuizView from "./components/QuizView/View";
-import {fetchQuiz} from "./components/helpers/content-format";
+import {fetchQuiz} from "./helpers/content-format";
 import {API_SERVER} from "./config";
 import {createBrowserRouter,redirect} from "react-router-dom";
 
