@@ -1,0 +1,64 @@
+.custom-input {
+	&.blank {
+		width: fit-content;
+		min-width: 160px;
+
+		input {
+			border: 1px solid var(--color-darkGrey) !important;
+
+			&[type="text"]:focus {
+				border-bottom: 1.5px solid var(--color-primary) !important;
+				margin-bottom: -0.5px;
+			}
+
+		}
+	}
+	&.dropdown {
+		width: fit-content;
+		position: relative;
+
+		select {
+			filter: invert(0.9);
+			border-color: #c2c2c2;
+			margin-right: 1.5rem;
+		}
+	}
+}
+
+.config-bar {
+	background: #ffffff4d;
+	padding: 3px;
+	border-radius: 10px;
+
+	position: absolute;
+	top: -1rem;
+	z-index: 1;
+
+}
+.icon {
+	$sz: 16px;
+	height: $sz;
+	width:  $sz;
+	margin: 0 1px;
+	cursor: pointer;
+	background-size: contain;
+	display: inline-block;
+	background-repeat: no-repeat;
+
+	&.move {
+		cursor: move;
+	}
+}
+
+.small-btn {
+	padding: 1rem;
+	&.smaller {
+		padding: 2px 0;
+
+		.icon {
+			$sz2: 12px;
+			height: $sz2;
+			width:  $sz2;
+		}
+	}
+}

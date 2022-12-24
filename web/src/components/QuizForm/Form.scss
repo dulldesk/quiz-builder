@@ -1,0 +1,45 @@
+form {
+	&.card {
+		padding: 2rem 4rem;
+	}
+	.input-field {
+		margin: 1rem 0;
+
+		&.last {
+			margin-top: 1.5rem;
+		}
+
+		&.inline {
+			> * {
+				display: inline !important;
+				width: auto !important;
+			}
+			#slug {
+				padding-left: 4px;
+
+				&::placeholder {
+					text-transform: lowercase;
+				}
+			}
+		}
+	}
+}
+#content-input {
+	min-height: 100px;
+	gap: 1rem;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+
+	input.node {
+		width: auto;
+		display: inline-block;
+	}
+}
+table.minimal td {
+	padding: 0;
+}
+#blank-mgr {
+	margin: 1rem 0;
+	gap: 2rem;
+}

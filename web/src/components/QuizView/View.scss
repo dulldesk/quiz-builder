@@ -1,0 +1,54 @@
+#root {
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.right {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.card {
+	max-width: var(--grid-maxwidth);
+	margin: auto;
+
+	h1 {
+		margin-bottom: 0;
+	}
+	form.quiz {
+		margin: 2rem 0;
+
+		select {
+			$px: 5px;
+
+			width: fit-content;
+			display: inline-block;
+			margin: 0 8px;
+			padding: 3px $px;
+
+			// adjust dropdown arrow position
+			$pr: 2rem;
+      padding-right: $pr;
+      background-position-x: #{"calc(100% + #{$pr} - #{$px} - 1px)"};
+		}
+	}
+
+	@mixin in-status($cls,$clr) {
+		#{$cls} {
+			box-shadow: 0 0 1px 1px $clr;
+			border: 1px solid $clr;
+		}
+	}
+	@mixin h1-status($cls, $con, $clr) {
+		@at-root #{".card#{$cls}"} h1::after {
+			content: $con;
+			color: $clr;
+		}
+	}
+
+  @include in-status(".ac", var(--color-success));
+  @include in-status(".wa", var(--color-error));
+	@include h1-status(".ac", " ✅ all correct!", var(--color-success));
+	@include h1-status(".wa", " ~", #ffc311);
+}
