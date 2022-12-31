@@ -29,7 +29,7 @@ export default function View() {
 
 	return (
 		<div className={`card ${hasAttempted ? (wrongInputs.length === 0 ? "ac" : "wa") : ""}`}>
-		{!Object.keys(quiz).length ? "" : <>
+		{!quiz || !Object.keys(quiz).length ? "": <>
 			<h1>{quiz.title}</h1>
 			<hr />
 			<form className="quiz" onSubmit={handleSubmit}>

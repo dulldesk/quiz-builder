@@ -25,8 +25,6 @@ def get_quiz(slug):
         cur.execute("SELECT title,content,slug,inputs FROM quizzes WHERE slug = ?", (slug,))
         data = cur.fetchall()
         conn.close()
-        # print("qz")
-        # print(data)
         if data: data[0]["inputs"] = b64decode(data[0]["inputs"]).decode('utf-8')
         return data
     except sqlite3.Error as e:
@@ -44,7 +42,6 @@ def check_slug_qid():
         cur.execute("SELECT slug FROM quizzes WHERE id = ?", (qid,))
         data = cur.fetchall()
         conn.close()
-        # print(data)
         return "1" if data and data[0]['slug'] == slug else "0"
     except sqlite3.Error as e:
         conn.close()
@@ -58,7 +55,6 @@ def update_quiz():
     slug = request.form['slug']
     qid = request.form['qid']
     inputs_data = request.form['inputs']
-    # inputs_data = json.loads(b64decode(request.form['inputs']).decode('utf-8'))
 
     conn = db.get_connection()
     try:
@@ -69,7 +65,6 @@ def update_quiz():
         return get_quiz(slug)
     except sqlite3.Error as e:
         conn.close()
-        # print(e)
         return {"error": e}, 400
 
 
@@ -92,7 +87,6 @@ def create_quiz():
         conn.execute("INSERT INTO quizzes (id,title,content,slug,inputs) VALUES(?,?,?,?,?)", (qid,title,content,slug, inputs_data))
         conn.commit()
         conn.close()
-        # print("b")
         return {"id": qid}
     except sqlite3.Error as e:
         conn.close()

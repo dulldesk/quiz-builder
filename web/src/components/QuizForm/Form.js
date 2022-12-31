@@ -7,7 +7,8 @@ import BlankManager from "./BlankManager";
 import BasicQuizInfo from "./BasicInfoInput";
 
 import {INPUT_DELIM_SUFFIX, dirtyclone, genRandomId} from "../../helpers/utils";
-import {mergeStrayTextFields, insertInputIntoContent, postQuiz} from "../../helpers/content-format";
+import {mergeStrayTextFields, insertInputIntoContent} from "../../helpers/content-format";
+import {postQuiz} from "../../helpers/fetch-data";
 import {encode as b64encode} from 'base-64';
 
 
@@ -44,7 +45,6 @@ function QuizForm(props) {
 
 		Promise.resolve()
 		.then(() => postQuiz(e.target, form.qid))
-		.then(resp => resp.json())
 		.then(data => {
 			if (data.error) throw data.error;
 			if (!form.qid) {navigate(`/${form.slug}/edit/${data.id}`); setForm({...form, qid: data.id})}

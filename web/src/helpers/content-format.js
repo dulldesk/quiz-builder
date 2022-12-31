@@ -1,5 +1,4 @@
 import {LINE_DELIM, INPUT_DELIM_SUFFIX} from "./utils";
-import {API_SERVER} from "../config";
 export function parseContent(s) {
 	return s.split(LINE_DELIM);
 }
@@ -21,25 +20,6 @@ export function mergeStrayTextFields(con) {
 		cnt++;
 	}
 	return new_content;
-}
-export function fetchQuiz(slug) {
-	return fetch(`${API_SERVER}/get/${slug}`).then(resp => resp.json())
-	.then(data => {
-		if (data.error) throw new Error(404);
-		let d = data[0];
-		d.content = parseContent(data[0].content);
-		// d.inputs = JSON.parse(data[0].inputs);
-		let input_str = data[0].inputs;
-		delete d.inputs;
-		return [d, JSON.parse(input_str)];
-	}).catch(e => [false, false]);
-}
-export function postQuiz(target, qid) {
-	const SERVER_URL = `${API_SERVER}/${qid ? "update" : "create"}`;
-	return fetch(SERVER_URL, {
-		method: "POST",
-		body: new FormData(target),
-	});
 }
 export function insertInputIntoContent(input_id, offset_info, content) {
 	let offsetnode_idx = parseInt(offset_info[1].dataset.index);
