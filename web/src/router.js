@@ -40,5 +40,9 @@ export const router = createBrowserRouter([
 		path: ":slug",
 		element: <QuizView />,
 		loader: quiz_view_loader
+	}, {
+		path: "*",
+		element: <QuizView />,
+		loader: redirect_to_index
 	}
 ]);
