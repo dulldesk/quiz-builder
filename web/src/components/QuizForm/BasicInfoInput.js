@@ -1,4 +1,5 @@
 import {Link} from "react-router-dom";
+import {baseOrigin} from "../../helpers/utils";
 
 export default function BasicQuizInfo(props) {
 	const slug = props.form.slug;
@@ -13,7 +14,7 @@ export default function BasicQuizInfo(props) {
 			{!qid
 				?
 					<div className="input-field inline">
-						<label htmlFor="slug"><>Link: </><i className="text-dark">{window.location.origin +"/"}</i></label>
+						<label htmlFor="slug"><>Link: </><i className="text-dark">{baseOrigin() +"/"}</i></label>
 						<input type="text" value={slug} placeholder="Slug (alphanumeric)" name="slug" id="slug" onChange={props.handleChange} maxLength="50" />
 						<span>(this can only be set once!)</span>
 					</div>
@@ -24,11 +25,11 @@ export default function BasicQuizInfo(props) {
 					<tbody>
 						<tr>
 							<td>View Quiz:</td>
-							<td><i className="text-dark"><Link to={`/${slug}`}>{`${window.location.origin}/${slug}`}</Link></i></td>
+							<td><i className="text-dark"><Link to={`/${slug}`}>{`${baseOrigin()}/${slug}`}</Link></i></td>
 						</tr>
 						<tr>
 							<td>Edit Link:</td>
-							<td><i className="text-dark"><Link to={`/${slug}/edit/${qid}`}>{`${window.location.origin}/${slug}/edit/${qid}`}</Link></i></td>
+							<td><i className="text-dark"><Link to={`/${slug}/edit/${qid}`}>{`${baseOrigin()}/${slug}/edit/${qid}`}</Link></i></td>
 						</tr>
 					</tbody>
 					</table>

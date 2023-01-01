@@ -2,6 +2,7 @@ import QuizForm from "./components/QuizForm/Form";
 import QuizView from "./components/QuizView/View";
 import {fetchQuiz,slugIdMatch} from "./helpers/fetch-data";
 import {createBrowserRouter,redirect} from "react-router-dom";
+import {BASENAME} from "./config";
 
 function redirect_to_index() {
 	return redirect("/");
@@ -45,4 +46,6 @@ export const router = createBrowserRouter([
 		element: <QuizView />,
 		loader: redirect_to_index
 	}
-]);
+], {
+	basename: `/${BASENAME}`
+});
