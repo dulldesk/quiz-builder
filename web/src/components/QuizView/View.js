@@ -18,7 +18,7 @@ export default function View() {
 
 		let wrong = [];
 		for (const id of Object.keys(inputs).filter(i => inputs[i].placed)) {
-			if (inputs[id].placed && inputs[id].ans != data.get(id)) wrong.push(id);
+			if (inputs[id].placed && `${inputs[id].ans}` !== `${data.get(id)}`) wrong.push(id);
 		}
 		setWrong(wrong);
 	}

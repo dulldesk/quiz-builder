@@ -56,6 +56,7 @@ export default function BlankBuilder(props) {
 
 	useEffect(() => {
 		updateBlank(id, options, placeholder, ans);
+		// eslint-disable-next-line
 	}, [options, placeholder, ans, id]);
 
 	return (

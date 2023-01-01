@@ -33,7 +33,7 @@ export function insertInputIntoContent(input_id, offset_info, content) {
 		if (elm.startsWith(INPUT_DELIM_SUFFIX)) {
 			if (elm.substring(INPUT_DELIM_SUFFIX.length).trim() !== input_id)
 				new_content.push(elm);
-		} else if (i == offsetnode_idx && !inserted) {
+		} else if (`${i}` === `${offsetnode_idx}` && !inserted) {
 			let before = elm.substring(0, offset).trim();
 			if (before !== "") new_content.push(before);
 

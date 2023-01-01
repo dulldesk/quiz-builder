@@ -1,4 +1,3 @@
-import {API_SERVER} from "../config";
 import {parseContent} from "./content-format";
 import {decode as b64decode} from 'base-64';
 
