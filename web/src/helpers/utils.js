@@ -12,5 +12,5 @@ export function genRandomId() {
 	return cryptoRandomString({length: 16, type: 'alphanumeric'});
 }
 export function baseOrigin() {
-	return `${window.location.origin}/${BASENAME}`;
+	return `${window.location.origin}/${BASENAME}/#`;
 }

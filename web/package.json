@@ -2,7 +2,7 @@
   "name": "quiz-builder",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://dulldesk.github.io/quiz-builder/",
+  "homepage": "https://dulldesk.github.io/quiz-builder",
   "dependencies": {
     "chota": "^0.8.0",
     "react": "^18.2.0",

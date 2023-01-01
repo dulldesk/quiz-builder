@@ -1,8 +1,8 @@
 import QuizForm from "./components/QuizForm/Form";
 import QuizView from "./components/QuizView/View";
 import {fetchQuiz,slugIdMatch} from "./helpers/fetch-data";
-import {createBrowserRouter,redirect} from "react-router-dom";
-import {BASENAME} from "./config";
+import {createHashRouter,redirect} from "react-router-dom";
+// import {BASENAME} from "./config";
 
 function redirect_to_index() {
 	return redirect("/");
@@ -28,7 +28,7 @@ async function quiz_view_loader({ params }) {
 }
 
 
-export const router = createBrowserRouter([
+export const router = createHashRouter([
 	{
 		path: "/",
 		element: <QuizForm />,
@@ -46,6 +46,4 @@ export const router = createBrowserRouter([
 		element: <QuizView />,
 		loader: redirect_to_index
 	}
-], {
-	basename: `/${BASENAME}`
-});
+]);
